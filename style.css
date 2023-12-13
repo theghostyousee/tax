@@ -142,9 +142,9 @@ body::before {
   text-align: center;
   margin: -20px -20px;
   line-height: 20px; 
-  padding: 20px 20px;
+  padding: 24px 24px;
 
-  font-size: 1em;
+  font-size: 1.4em;
   z-index: 99;
   
 
