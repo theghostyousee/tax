@@ -12,8 +12,22 @@
 <body>
 
     <div class="tax">
-        <img src="tax.png">
+        <img src="tax.png" id="tax">
+        <div class="pixel" id="startTaxes"><p>START COLLECTING TAXES</p></div>
+        <div class="socials" id="telegramLink">
+            <img src="tgg.png">
+        </div>
+    </div>
 
-        <div class="pixel"><p>START COLLECTING TAXES</p></div>
+    <script>
+        document.getElementById('startTaxes').addEventListener('click', function() {
+            window.open('https://twitter.com/intent/tweet?text=i%27m%20collecting%20my%20%24TAX%20for%20%40TaxAvax%20%F0%9F%94%BA');
+        });
+    
+        document.getElementById('telegramLink').addEventListener('click', function() {
+            window.open('https://t.me/TaxCollectorAVAX');
+        });
+    </script>
+    
 </body>
 </html>

@@ -63,8 +63,11 @@ body::before {
 }
 .tax img {
   width: 200px;
-  animation: tiltAnimation 2s ease-in-out infinite;
 
+}
+
+#tax{
+    animation: tiltAnimation 2s ease-in-out infinite;
 }
 
 .container {
@@ -141,6 +144,8 @@ body::before {
   line-height: 20px; 
   padding: 20px 20px;
 
+  font-size: 1em;
+  z-index: 99;
   
 
   background: #FEC106;
@@ -201,4 +206,17 @@ body::before {
   background: black;
   width: auto;
   z-index: 2;
+}
+
+.socials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 1vmin;
+}
+
+.socials img{
+    width: 50px;
+    cursor: pointer;
 }
