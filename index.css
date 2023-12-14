@@ -29,7 +29,7 @@
   user-select: none;
 }
 
-.pixel2 {
+.pixel22 {
   font-size: 25px;
   color: white;
   height: auto;
@@ -73,6 +73,22 @@
   border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
 }
 
+.pixel22 {
+  line-height: 0;
+  
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+  
+  border-style: solid;
+  border-width: 20px;
+
+}
+
+
 .pixel p {
   display: inline-block;
   vertical-align: top;
@@ -98,6 +114,22 @@
 		radial-gradient(circle at 0 100%, rgba(204,0,0,0) 14px, #000000 15px);
 }
 
+.pixel2 p {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  width: auto;
+  text-align: center;
+  margin: -20px -20px;
+  line-height: 20px;
+  padding: 10px 20px;
+
+	background-size: 50% 50%;
+	background-repeat: no-repeat;
+
+}
+
+
 .pixel2 {
   position: relative;
   display: block;
@@ -117,7 +149,7 @@
   bottom: 10px;
   left: -10px;
   right: -10px;
-  background: black;
+  background: rgb(236, 221, 221);
   z-index: -1;
 }
 
@@ -129,14 +161,7 @@
   bottom: 4px;
   left: -6px;
   right: -6px;
-  background: black;
+  background: rgb(252, 244, 244);
   z-index: -1;
 }
 
-.pixel2 {
-  padding: 10px 10px;
-  position: relative;
-  background: black;
-  width: auto;
-  z-index: 2;
-}
