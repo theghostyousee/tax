@@ -104,6 +104,12 @@ body:after {
   user-select: none;
 }
 
+#hey{
+  font-weight: bold;
+  color: black;
+
+}
+
 p{
   text-align: center;
 }
