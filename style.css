@@ -220,7 +220,7 @@ body:after {
   bottom: 4px;
   left: -6px;
   right: -6px;
-  background: rgba(100, 23, 6, 0.866);
+  background: #45aeb1;
   z-index: -1;
 }
 
