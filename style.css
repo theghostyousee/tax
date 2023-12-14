@@ -22,7 +22,7 @@ body {
   justify-content: center;
   font-family: "Pixelify Sans", sans-serif;
 
-  background-image: url("d.avif");
+  background-image: url("bg.avif");
 
   justify-content: center;
   background-repeat: no-repeat;
@@ -220,7 +220,7 @@ body:after {
   bottom: 4px;
   left: -6px;
   right: -6px;
-  background: #45aeb1;
+  background: rgba(100, 23, 6, 0.866);
   z-index: -1;
 }
 
