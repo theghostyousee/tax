@@ -104,6 +104,9 @@ body:after {
   user-select: none;
 }
 
+p{
+  text-align: center;
+}
 .pixel3 {
   font-size: 25px;
   color: white;
