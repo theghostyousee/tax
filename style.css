@@ -324,13 +324,24 @@ input[type=text]:focus {
     cursor: pointer;
     transition: width 0.3s ease-in-out; /* Add transition effect */
   }
+
+  .chain{
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 14%;
+    gap:1vmin
+  
+  }
+  
   
   .chain img:hover{
     width: 55px;
   }
 
   body {
-    height: 120vh;
+    height: 130vh;
     width: 100%;
     display: flex;
     overflow-y: scroll;
