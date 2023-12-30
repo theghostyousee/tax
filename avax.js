@@ -622,7 +622,7 @@ document.addEventListener('DOMContentLoaded', () => {
               console.log('Compound successful');
 
               // Optionally, update user info after compounding
-              // updateUserRewards(); 
+              updateUserRewards(); 
           } catch (error) {
               console.error("Error during compounding:", error);
           }
