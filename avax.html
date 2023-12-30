@@ -18,7 +18,7 @@
 
         <div class="chain">
             <img src="polygon.png" style="opacity: 0.8;">
-            <img src="ETH.png" style="opacity: 0.8;">
+            <img src="ETH.png" id="ETH" style="opacity: 0.8;">
             <img src="avax.png" id="avaxImage" style="width: 75px;">
             <img src="arb.png" id="arbitrum" style="opacity: 0.8;" >
             <img src="bsc.png" style="opacity: 0.8;">
@@ -100,6 +100,17 @@
                 });
             }
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const avaxImage = document.getElementById('ETH');
+        
+            if (avaxImage) {
+                avaxImage.addEventListener('click', () => {
+                    window.location.href = 'eth.html';
+                });
+            }
+        });
+
 
         document.getElementById('tweet').addEventListener('click', function() {
             window.open('https://twitter.com/intent/tweet?text=I%27m%20mining%20my%20proof%20for%20%40OmniMiner_%20%E2%9B%8F%EF%B8%8F');
