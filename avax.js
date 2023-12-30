@@ -512,7 +512,7 @@ async function updateUserRewards(userAccount) {
 
       // Convert the rewardDebt from Wei to ETH
       const rewardDebtInETH = web3.utils.fromWei(userInfo.rewardDebt, 'ether');
-      const roundedRewardDebt = parseFloat(rewardDebtInETH).toFixed(5); // Rounded to 3 decimal places
+      const roundedRewardDebt = parseFloat(rewardDebtInETH).toFixed(9); // Rounded to 3 decimal places
 
       // Update the rewards display
       document.querySelector('.rewards h3:nth-child(2)').textContent = `${roundedRewardDebt} AVAX`;
