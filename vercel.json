@@ -1,0 +1,9 @@
+{
+    "version": 2,
+    "routes": [
+      { "src": "/avalanche", "dest": "/avax.html" },
+      { "src": "/", "dest": "/arbitrum.html" },
+      { "src": "/eth", "dest": "/eth.html" }
+    ]
+  }
+  
