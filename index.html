@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="tax.png" />
-    <title>Tax Collector</title>
+    <title>Omni Miner</title>
     <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
     <script src="https://cdn.jsdelivr.net/npm/web3@1.6.1/dist/web3.min.js"></script>
 
@@ -14,12 +14,12 @@
 <body>
 
     <div class="tax">
-        <img src="astro.png" id="tax">
-        <div class="pixel" id="startTaxes">
-            <p id="taxCollectorDisplay">MINE !</p>
+        <img src="earth.png" id="tax">
+        <div class="pixels" id="startTaxes">
+
+            <button id="tweet">MINE ME</button>
             
         </div>
-        <p id="hey">You need to buy more than 608 $TAX tokens to become the new Tax Collector</p>
 
         <div class="socials" >
             <img id="telegramLink" src="wsa.png">        
@@ -28,27 +28,14 @@
     </div>
 
     <script>
-        document.getElementById('startTaxes').addEventListener('click', function() {
-            window.open('https://traderjoexyz.com/avalanche/trade?outputCurrency=0xb2cd12aca2187761528d039c96e718c1c2e5e853');
+        document.getElementById('tweet').addEventListener('click', function() {
+            window.open('');
         });
     
         document.getElementById('telegramLink').addEventListener('click', function() {
             window.open('https://t.me/Omni_Miner');
         });
-        document.getElementById('joe').addEventListener('click', function() {
-            window.open('https://traderjoexyz.com/avalanche/trade?outputCurrency=0xb2cd12aca2187761528d039c96e718c1c2e5e853');
-        });
-        document.getElementById('TWITTER').addEventListener('click', function() {
-            window.open('https://twitter.com/TaxAvax');
-        });
 
-        async function displayTaxCollector() {
-            await loadWeb3();
-            const contract = await loadContract();
-            contract.methods.taxCollector().call().then(function(result) {
-                document.getElementById('taxCollectorDisplay').innerText = 'Tax Collector Address: ' + result;
-            });
-        }
 
         
         

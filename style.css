@@ -43,7 +43,7 @@ body:after {
 
 .tax {
   width: 100%;
-  height: 50%;
+  height: 70%;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -128,22 +128,12 @@ p{
   top: 2px;
 }
 
-.pixel {
-  line-height: 0;
-
-  image-rendering: optimizeSpeed;
-  image-rendering: -moz-crisp-edges; /* Firefox */
-  image-rendering: -o-crisp-edges; /* Opera */
-  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
-  image-rendering: crisp-edges;
-  -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
-
-  border-style: solid;
-  border-width: 20px;
-  -moz-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-  -webkit-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-  -o-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
-  border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+.pixels {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes moveUp {
@@ -155,37 +145,29 @@ p{
     }
 }
 
-.pixel p {
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
-  width: auto;
-  text-align: center;
-  margin: -20px -20px;
-  line-height: 20px; 
-  padding: 34px 34px;
-
-  font-size: 1.4em;
-  z-index: 99;
-  color: black;
-  
-
-  background: #ffffff;
-  background: linear-gradient(135deg, transparent 10px, #ffffff 0) top left,
-    linear-gradient(225deg, transparent 10px, #ffffff 0) top right,
-    linear-gradient(315deg, transparent 10px, #ffffff 0) bottom right,
-    linear-gradient(45deg, transparent 10px, #ffffff 0) bottom left;
-  background-size: 50% 50%;
-  background-repeat: no-repeat;
-  background-image: radial-gradient(
-      circle at 0 0,
-      rgba(255, 255, 255, 0) 14px,
-      #ffffff 15px
-    ),
-    radial-gradient(circle at 100% 0, rgba(255, 255, 255, 0) 14px, #ffffff 15px),
-    radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0) 14px, #ffffff 15px),
-    radial-gradient(circle at 0 100%, rgba(255, 255, 255, 0) 14px, #ffffff 15px);
+button {
+  font-family: 'VT323', 'arial';
+  background: none;
+  border: none;
+  outline: none;
+  display: block;
+  font-size: 40px;
+  padding: 10px;
+  box-shadow: 5px 0px #1AB3DA, -5px 0px #1AB3DA, 0px 5px #1AB3DA, 0px -5px #1AB3DA, 0px 15px #1AB3DA, -5px 10px #1AB3DA, 5px 10px #1AB3DA;
+  background: #28D1FD;
+  color: #050505;
+  transition: box-shadow 0.1s, background 0.1s, padding 0.1s;
+  cursor: pointer;
 }
+
+button:active {
+  box-shadow: 5px 5px #2353E0, -5px 5px #2353E0, 0px 10px #2353E0, 0px 0px #133DB9, 0px 15px #2979FF, -5px 10px #2A6CDA, 5px 10px #2A6CDA;
+  background: #2353E0;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  transition: box-shadow 0.1s, background 0.1s, padding 0.1s;
+}
+
 
 .pixel2 {
   position: relative;
@@ -236,7 +218,6 @@ p{
     justify-content: center;
     align-items: center;
     display: flex;
-    gap: 1vmin;
 }
 
 .socials img{
