@@ -535,6 +535,27 @@ async function handleReferralButtonClick() {
 
 
 
+async function fetchAndDisplayReferralCode(account) {
+  try {
+    const referralCode = await contract.methods.referalCode(account).call();
+    const referralInput = document.querySelector('.input-ref input');
+    const referralButton = document.querySelector('.button-ref button');
+
+    if (referralCode && referralCode !== '') {
+      referralInput.value = "omniminer.xyz?ref=" + referralCode;
+      referralButton.textContent = 'Copy to Clipboard';
+      referralButton.onclick = copyReferralToClipboard; // Change event handler
+    } else {
+      referralInput.value = 'No referral code';
+      referralButton.textContent = 'Create Referral';
+      referralButton.onclick = createReferralCode; // Change event handler
+    }
+  } catch (error) {
+    console.error("Error fetching referral code:", error);
+  }
+}
+
+
 
 
 
@@ -583,27 +604,6 @@ function copyReferralToClipboard() {
       .then(() => console.log("Referral link copied to clipboard!"))
       .catch(err => console.error("Error copying referral link:", err));
 }
-
-async function fetchAndDisplayReferralCode(account) {
-  try {
-    const referralCode = await contract.methods.referalCode(account).call();
-    const referralInput = document.querySelector('.input-ref input');
-    const referralButton = document.querySelector('.button-ref button');
-
-    if (referralCode && referralCode !== '') {
-      referralInput.value = "omniminer.xyz?ref=" + referralCode;
-      referralButton.textContent = 'Copy to Clipboard';
-      referralButton.onclick = copyReferralToClipboard; // Change event handler
-    } else {
-      referralInput.value = 'No referral code';
-      referralButton.textContent = 'Create Referral';
-      referralButton.onclick = createReferralCode; // Change event handler
-    }
-  } catch (error) {
-    console.error("Error fetching referral code:", error);
-  }
-}
-
 
 
 document.addEventListener('DOMContentLoaded', () => {

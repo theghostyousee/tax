@@ -414,11 +414,11 @@ async function connectWallet() {
 
   try {
     const chainId = await ethereum.request({ method: "eth_chainId" });
-    const arbitrumChainId = "0xA86A"; 
-    if (chainId !== arbitrumChainId) {
+    const avalancheMainnetChainId = "0xA86A"; // Chain ID for Avalanche Mainnet C-Chain
+    if (chainId !== avalancheMainnetChainId) {
       await ethereum.request({
         method: "wallet_switchEthereumChain",
-        params: [{ chainId: arbitrumChainId }],
+        params: [{ chainId: avalancheMainnetChainId }],
       });
     }
 
@@ -522,21 +522,14 @@ async function updateUserRewards(userAccount) {
 }
 
 
-let isReferralCodeCreated = false; // Flag to track referral code creation
-
-// Function to handle referral button click
-async function handleReferralButtonClick() {
-    if (!isReferralCodeCreated) {
-        await createReferralCode();
-    } else {
-        copyReferralToClipboard();
-    }
+async function fetchAndDisplayReferralCode(account) {
+  try {
+    const referralCode = await contract.methods.referalCode(account).call();
+    document.querySelector('.input-ref input').value = "www.omniminer.xyz/avalanche?ref="+referralCode || 'No referral code';
+  } catch (error) {
+    console.error("Error fetching referral code:", error);
+  }
 }
-
-
-
-
-
 
 document.getElementById("connect-btn").addEventListener("click", connectWallet);
 
@@ -563,52 +556,12 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       // Call the createReferralCode function of the contract
       await contract.methods.createReferralCode().send({ from: accounts[0] });
-      isReferralCodeCreated = true;
       console.log("Referral code created.");
-      document.querySelector('.button-ref button').textContent = 'Copy to Clipboard';
-
-      // Fetch and display the referral code
-      const accounts = await ethereum.request({ method: "eth_requestAccounts" });
-      fetchAndDisplayReferralCode(accounts[0]);
     } catch (error) {
       console.error("Error creating referral code:", error);
     }
   }
 
-});
-
-function copyReferralToClipboard() {
-  const referralLink = document.querySelector('.input-ref input').value;
-  navigator.clipboard.writeText(referralLink)
-      .then(() => console.log("Referral link copied to clipboard!"))
-      .catch(err => console.error("Error copying referral link:", err));
-}
-
-async function fetchAndDisplayReferralCode(account) {
-  try {
-    const referralCode = await contract.methods.referalCode(account).call();
-    const referralInput = document.querySelector('.input-ref input');
-    const referralButton = document.querySelector('.button-ref button');
-
-    if (referralCode && referralCode !== '') {
-      referralInput.value = "omniminer.xyz?ref=" + referralCode;
-      referralButton.textContent = 'Copy to Clipboard';
-      referralButton.onclick = copyReferralToClipboard; // Change event handler
-    } else {
-      referralInput.value = 'No referral code';
-      referralButton.textContent = 'Create Referral';
-      referralButton.onclick = createReferralCode; // Change event handler
-    }
-  } catch (error) {
-    console.error("Error fetching referral code:", error);
-  }
-}
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  const referralButton = document.querySelector('.button-ref button');
-  referralButton.addEventListener('click', handleReferralButtonClick);
 });
 
 
@@ -708,15 +661,5 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   } else {
       console.log('Claim button not found');
-  }
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const referralCode = urlParams.get('ref'); // Assuming the URL is like ?ref=dBRw0
-
-  if (referralCode) {
-      document.getElementById('referralInput').value = referralCode;
   }
 });
