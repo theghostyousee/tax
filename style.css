@@ -317,3 +317,51 @@ input[type=text]:focus {
 .chain img:hover{
   width: 65px;
 }
+
+@media screen and (max-height: 880px) {
+  .chain img{
+    width: 35px;
+    cursor: pointer;
+    transition: width 0.3s ease-in-out; /* Add transition effect */
+  }
+  
+  .chain img:hover{
+    width: 55px;
+  }
+
+  body {
+    height: 120vh;
+    width: 100%;
+    display: flex;
+    overflow-y: scroll;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Pixelify Sans", sans-serif;
+    background-image: url("bg.png");
+  
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+  }
+  
+
+  button {
+    font-family: "VT323", "arial";
+    background: none;
+    border: none;
+    outline: none;
+    display: block;
+    font-size: 20px;
+    padding: 6px;
+    box-shadow: 5px 0px #1ab3da, -5px 0px #1ab3da, 0px 5px #1ab3da,
+      0px -5px #1ab3da, 0px 15px #1ab3da, -5px 10px #1ab3da, 5px 10px #1ab3da;
+    background: #28d1fd;
+    color: #050505;
+    transition: box-shadow 0.1s, background 0.1s, padding 0.1s;
+    cursor: pointer;
+  }
+  
+}
