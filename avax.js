@@ -471,7 +471,7 @@ async function updateTVL() {
       const roundedBalanceInEth = parseFloat(balanceInEth).toFixed(4);
 
       // Update the TVL display
-      document.getElementById('tvl').textContent = `${roundedBalanceInEth} ETH`;
+      document.getElementById('tvl').textContent = `${roundedBalanceInEth} AVAX`;
   } catch (error) {
       console.error("Error fetching TVL:", error);
   }
@@ -489,10 +489,10 @@ async function updateUserETHInfo(userAccount) {
       const userInfo = await contract.methods.userInfo(userAccount).call();
       const amountInETH = web3.utils.fromWei(userInfo.amount, 'ether');
       const roundedAmount = parseFloat(amountInETH).toFixed(4);
-      userETHInfoElement.textContent = `${roundedAmount} ETH`;
+      userETHInfoElement.textContent = `${roundedAmount} AVAX`;
       console.log("yeah");
   } catch (error) {
-      console.error("Error fetching user ETH info:", error);
+      console.error("Error fetching user AVAX info:", error);
   }
 }
 
