@@ -515,7 +515,7 @@ async function updateUserRewards(userAccount) {
       const roundedRewardDebt = parseFloat(rewardDebtInETH).toFixed(5); // Rounded to 3 decimal places
 
       // Update the rewards display
-      document.querySelector('.rewards h3:nth-child(2)').textContent = `${roundedRewardDebt} ETH`;
+      document.querySelector('.rewards h3:nth-child(2)').textContent = `${roundedRewardDebt} AVAX`;
   } catch (error) {
       console.error("Error fetching user rewards:", error);
   }
