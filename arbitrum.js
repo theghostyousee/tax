@@ -525,7 +525,7 @@ async function updateUserRewards(userAccount) {
 async function fetchAndDisplayReferralCode(account) {
   try {
     const referralCode = await contract.methods.referalCode(account).call();
-    document.querySelector('.input-ref input').value =  "omniminer.xyz?ref=" +referralCode || 'No referral code';
+    document.querySelector('.input-ref input').value =  "elixirminer.xyz?ref=" +referralCode || 'No referral code';
   } catch (error) {
     console.error("Error fetching referral code:", error);
   }
