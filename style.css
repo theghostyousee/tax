@@ -344,7 +344,7 @@ header {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  gap: 3vmin;
+  gap: 4vmin;
   border: 1px solid  rgba(245, 245, 220, 0.041);
 }
 
@@ -355,7 +355,7 @@ header {
 }
 
 .slide {
-  width: 230px;
+  width: 240px;
   flex-shrink: 0;
   /* Additional styling for the text */
   font-size: 75px;
@@ -364,14 +364,14 @@ header {
   display: flex;
   font-family: wiz,sans-serif;
   font-family: 'wiz', sans-serif;
-  color: hsla(0, 0%, 100%, 0.593);
+  color: hsla(0, 0%, 100%, 0.937);
   justify-content: center;
   align-items: center;
 }
 
 .slide img{
-  width: 70px;
-  opacity: 0.593;
+  width: 80px;
+  opacity: 0.893;
 }
 
 @keyframes scroll {
