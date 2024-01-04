@@ -347,21 +347,22 @@ header {
 }
 
 .slide {
-  width: 250px;
+  width: 230px;
   flex-shrink: 0;
   /* Additional styling for the text */
-  font-size: 45px;
+  font-size: 51px;
   font-weight: 900;
   text-align: center;
   display: flex;
-  font-family: monospace,sans-serif;
-
+  font-family: Montserrat,sans-serif;
+  color: hsla(0, 0%, 100%, 0.28);
   justify-content: center;
   align-items: center;
 }
 
 .slide img{
   width: 70px;
+  opacity: 0.4;
 }
 
 @keyframes scroll {
