@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+
+
+@font-face {
+  font-family: 'wiz'; /* Name your font */
+  src: url('./b.ttf') format('truetype'); /* Path to your font file */
+}
+
 
 ::before,
 ::after {
@@ -350,19 +358,20 @@ header {
   width: 230px;
   flex-shrink: 0;
   /* Additional styling for the text */
-  font-size: 51px;
+  font-size: 75px;
   font-weight: 900;
   text-align: center;
   display: flex;
-  font-family: Montserrat,sans-serif;
-  color: hsla(0, 0%, 100%, 0.28);
+  font-family: wiz,sans-serif;
+  font-family: 'wiz', sans-serif;
+  color: hsla(0, 0%, 100%, 0.593);
   justify-content: center;
   align-items: center;
 }
 
 .slide img{
   width: 70px;
-  opacity: 0.4;
+  opacity: 0.593;
 }
 
 @keyframes scroll {
